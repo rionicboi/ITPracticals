@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Tables</title>
+</head>
+<body>
+    <script>
+        let num = 2;
+        let tPrint = setInterval(printTable, 1000);
+        
+        function getRandomColor() {
+            // Function to generate a random hex color
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function printTable() {
+            if (num == 11) {
+                clearInterval(tPrint);
+            }
+            else {
+                let fontSize = 12;
+                for (var j = 1; j <= 10; j++) {
+                    // Change the text color for each line
+                    let textColor = getRandomColor();
+                    document.write('<span style= "color: ' + textColor + '; font-size: '+ fontSize +'px;">' + num + "x" + j + "=" + (num * j) + '</span>');
+                    document.write("<br>");
+                    fontSize += 2;
+                }
+                document.write("<br>");
+                num++;
+            }
+        }
+    </script>
+</body>
+</html>

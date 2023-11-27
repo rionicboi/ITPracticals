@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn and SignUp</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #3498db;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            margin-right: 10px;
+            color: #fff;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 10px 5px 5px black;
+            margin-bottom: 20px;
+            max-width: 400px;
+            width: 100%;
+            margin-right: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sign In </h1>
+    <form action="/signin" method="post">
+        <label for="signinUsername">Username:</label>
+        <input type="text" id="signinUsername" name="username" required>
+        <br>
+        <label for="signinPassword">Password:</label>
+        <input type="password" id="signinPassword" name="password" required>
+        <br>
+        <button type="submit">SignIn</button>
+    </form>
+
+    <h1>Sign Up </h1>
+    <form action="/signup" method="post">
+        <label for="signupUsername">Username:</label>
+        <input type="text" id="signupUsername" name="username" required>
+        <br>
+        <label for="signupPassword">Password:</label>
+        <input type="password" id="signupPassword" name="password" required>
+        <br>
+        <button type="submit">SignUp</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pet Form</h1>
+        <form onsubmit="return createPet()">
+            <!-- Pet name, age, weight, type, and what it likes the most -->
+            <label for="pname">Name:</label><br>
+            <input type="text" id="pname" name="pname"><br>
+
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age" min="0" max="100"><br>
+
+            <label for="weight">Weight</label><br>
+            <input type="text" id="weight" name="weight"><br>
+
+            <label for="type">Type</label><br>
+            <select name="type" id="type">
+                <option>Select an option</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="bird">Bird</option>
+                <option value="rabbit">Rabbit</option>
+            </select> <br>
+
+            <label for="favThing">Likes:</label><br>
+            <textarea name="favThing" id="favThing" cols="30" rows="4"></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function Pet(name, age, weight, type, favThing) {
+            this.name = name;
+            this.age = age;
+            this.weight = weight;
+            this.type = type;
+            this.favThing = favThing;
+        }
+
+        function createPet() {
+            var pname = document.getElementById('pname').value;
+            var age = document.getElementById('age').value;
+            var weight = document.getElementById('weight').value;
+            var type = document.getElementById('type').value;
+            var favThing = document.getElementById('favThing').value;
+
+            var pet = new Pet(pname, age, weight, type, favThing);
+            console.log("Pet Object: ", pet);
+            console.log("Equivalent JSON: ", JSON.stringify(pet));
+
+            return false;
+        }
+    </script>
+</body>
+</html>

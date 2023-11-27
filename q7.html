@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets Info</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;    
+        }
+        #petsContainer {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 16px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 8px;
+        }
+        strong {
+            display: block;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="petsContainer">
+        <h1>Pets Information</h1>
+        <ul id="petsList"></ul>
+    </div>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var petsData = JSON.parse(xhr.responseText);
+                displayPets(petsData);
+            }
+        };
+        xhr.open("GET", "pets.json", true);
+        xhr.send();
+
+        function displayPets(pets) {
+            var petsList = document.getElementById("petsList");
+            pets.forEach(function(pet) {
+                var listItem = document.createElement("li");
+                listItem.innerHTML = `<strong>Name:</strong> ${pet.name}<br>
+                                      <strong>Age:</strong> ${pet.age}<br>
+                                      <strong>Weight:</strong> ${pet.weight}<br>
+                                      <strong>Type:</strong> ${pet.type}<br>
+                                      <strong>Likes:</strong> ${pet.favThing}`;
+                petsList.appendChild(listItem);
+            });
+        }
+    </script>
+</body>
+</html>

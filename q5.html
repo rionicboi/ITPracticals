@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Changer</title>
+</head>
+<body>
+    <p id = "targetParagraph">Hello EveryNyan </p>
+
+    <table> 
+        <tr> 
+            <td>Colors</td>
+            <td><button onclick="changeColor('red')">Red</button></td>
+            <td><button onclick="changeColor('green')">Green</button></td>
+            <td><button onclick="changeColor('blue')">Blue</button></td>
+        </tr>
+        <tr> 
+            <td>Font-Size</td>
+            <td><button onclick="changeFontSize(10)">10</button></td>
+            <td><button onclick="changeFontSize(20)">20</button></td>
+            <td><button onclick="changeFontSize(30)">30</button></td>
+        </tr>
+        <tr> 
+            <td>Font-Family</td>
+            <td><button onclick="changeFontFamily('Arial')">Arial</button></td>
+            <td><button onclick="changeFontFamily('Courier New')">Courier New</button></td>
+            <td><button onclick="changeFontFamily('Times New Roman')">Times New Roman</button></td>
+        </tr>
+    </table>
+
+    <script>
+        function changeColor(color) {
+            document.getElementById('targetParagraph').style.color = color;
+        }
+
+        function changeFontFamily(font) {
+            document.getElementById('targetParagraph').style.fontFamily = font;
+        }
+
+        function changeFontSize(size) {
+            document.getElementById('targetParagraph').style.fontSize = size + 'px';
+        }
+    </script>
+</body>
+</html>
