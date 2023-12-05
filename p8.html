@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COURSE</title>
+    
+</head>
+<body>
+    <div id="hi"><h3>BSc. Hons Computer Science</h3></div>
+    <p><b>Eligibilty Criteria:</b> B.Sc. (Hons.) Computer Science is a 3-year full-time undergraduate course divided into 6 semesters, with each semester lasting a period of 6 months. The minimum eligibility for the course is a Higher Secondary Certificate (10+2) qualification with a minimum aggregate score of 45%. It is a study of the theory, experimentation, and engineering which form the basis for the design and use of computers. </p>
+    <div class = "Course">
+    <p><b></b>Duration:</b>3 Years </p>
+    <p><b></b>Syllabus:</b></p>
+    <h3>First Year</h3> 
+    
+    <div id="1">
+    <table>
+        <tr>
+            <th>Semester I </th>
+            <th>Semester II</th>	
+        </tr>
+        <tr>
+            <td>    Introduction to Digital Electronics  </td>
+            <td>    Front Office Management     </td>	
+        </tr>
+        <tr>
+            <td>    Basics of Computer Science  </td>
+            <td>    Discrete Mathematics   </td>	
+        </tr>
+        <tr>
+            <td>    Environmental Sciences   </td>
+            <td>  Computer Organization    </td>	
+        </tr>
+        <tr>
+            <td>    Foundation course in Mathematics 	  </td>
+            <td>  Fundamental of Open Source Software-LINUX   </td>	
+        </tr>
+    </table>
+</div>
+    <h3>Second Year</h3> 
+    <table id="2">
+        <tr>
+            <th>Semester III </th>
+            <th>Semester IV</th>	
+        </tr>
+        <tr>
+            <td>    Object-Oriented Programming using C++ 	 </td>
+            <td>   Database Management Systems  </td>	
+        </tr>
+        <tr>
+            <td>    Functional English-I 	 </td>
+            <td>   Value and Ethics    </td>	
+        </tr>
+        <tr>
+            <td>    Technical Writing 	   </td>
+            <td>  System Analysis and design  </td>	
+        </tr>
+        <tr>
+            <td>   Analytical Skill Development-I 	  </td>
+            <td>  Analytical Skill Development-II	  </td>	
+        </tr>
+    </table>
+    </div>
+    <p><b>Future Possibilities:</b>Business Analyst, Junior Analyst, Business Development Executive, System integrator, Hardware Designer, Logic Designer, Systems Analyst, System Administrator, Computer programmer, Computer Scientist, Software Developer, etc.</p>
+    
+    <button type="button" id="btn1">Redesign</button>
+    
+    <!-- <script scr = "jquery-3.7.1.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+       $("#btn1").click(function(){
+        $("body").css({
+                "background-color": "#e0f7fa", 
+                "font-family": "Arial, sans-serif",
+                "margin": "0",
+                "padding": "0"
+            });
+
+            $("#hi").css({
+                "text-align": "center",
+                "margin-top": "20px"
+            });
+
+            $("p, h3").css({
+                "margin-left": "20px",
+                "margin-right": "20px"
+            });
+
+            $(".Course").css({
+                "background-color": "#00bcd4", 
+                "margin": "20px",
+                "padding": "20px",
+                "border-radius": "10px"
+            });
+
+            $("table").css({
+                "margin-left": "auto",
+                "margin-right": "auto",
+                "border-collapse": "collapse",
+                "width": "80%",
+                "margin-top": "20px"
+            });
+
+            $("th, td").css({
+                "border": "1px solid black",
+                "padding": "10px",
+                "text-align": "left"
+            });
+
+            $("#btn1").css({
+                "display": "block",
+                "margin": "20px auto",
+                "padding": "10px",
+                "background-color": "#1976D2", /* Material Blue */
+                "color": "white",
+                "border": "none",
+                "border-radius": "5px",
+                "cursor": "pointer"
+            });
+
+            $("#btn1").click(function(){
+                $(".Course").css({
+                    "background-color": "#00bcd4", /* Light Blue Background Color for Course Section */
+                    "margin": "20px",
+                    "padding": "20px",
+                    "border-radius": "10px"
+                });
+                $("td").css({"border": "1px solid black", "padding": "10px", "text-align": "left"});
+                $("table").css({"margin-left": "auto", "margin-right": "auto", "width": "80%", "margin-top": "20px"});
+            });
+        });
+        $("#1").css({
+            "background-color":"aqua","margin-left":"500px","margin-right":"500px"})
+        $("#2").css({
+            "background-color":"aqua","margin-left":"500px","margin-right":"500px"})
+        $("td").css({"border":"black 1px solid","border-collapse":"collapse"})
+        $("table").css({"margin-left":"auto","margin-right":"auto"})
+      
+    </script>
+
+    
+</body>
+</html>
