@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom in and Zoom out</title>
+</head>
+<body>
+    <img src="cp1.jpg" alt="Brown cat" id="1"/>
+    <script>
+        var m= document.getElementById("1");
+        m.style.width="200px";
+        m.addEventListener("mouseover",function(){
+            m.style.width="400px";
+        })
+        m.addEventListener("mouseleave",function(){
+            m.style.width="200px";
+        })
+    </script>
+</body>
+</html>

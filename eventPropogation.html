@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1"> in div 1
+        <ul id="ul1"> in ounordered list
+            <li id="1">In element 1</li>
+            <li id="2">In element 2</li>
+            <li id="3">In element 3</li>
+            <li id="4">In element 4</li>
+        </ul>
+    </div>
+    <button type="button" value="HELLO" id="b1"/>
+    <script>
+        m= document.getElementById("1");
+        n= document.getElementById("ul1");
+        o= document.getElementById("div1");
+        m.addEventListener("click",function(){
+            console.log("IN LIST ITEM")
+        },true)
+        n.addEventListener("click",function(e){
+            console.log("IN LIST ELEMENT")
+            //e.stopPropagation();
+            e.cancelBubble= true;
+        },true)
+        o.addEventListener("click",function(){
+            console.log("IN DIV")
+        },true)
+
+    </script>
+</body>
+</html>

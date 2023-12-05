@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shifting Image</title>
+  </head>
+  <body>
+    <img src="catmeow.jpg" alt="CAT IMAGE" id="yay" /><br />
+    <input type="button" value="START" id="1" onclick="timer()" />
+    <input type="button" value="STOP" id="2" onclick="abc2()" />
+    <script>
+      let size = 10;
+      let t;
+      document.write(screen.width);
+      function abc() {
+        document.getElementById("yay").style.paddingLeft = size + "px";
+        size += 20;
+
+        if (size == screen.width) {
+          document.getElementById("yay").style.paddingLeft = "0px";
+        }
+      }
+      document.write(document.getElementById("yay").style.paddingLeft);
+      function abc2() {
+        clearInterval(t);
+        document.getElementById("yay").style.paddingLeft = "0 px";
+      }
+      function timer() {
+        t = setInterval(abc, 100);
+      }
+    </script>
+  </body>
+</html>

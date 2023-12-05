@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #1 {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 8px; 
+        }
+
+        .grid-item {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="1"></div>
+
+    <div id="inputArea">
+        <input type="text" id="name" placeholder="Name">
+        <input type="text" id="email" placeholder="Email">
+        <input type="text" id="phone" placeholder="Phone Number">
+        <input type="text" id="gender" placeholder="Gender">
+        <button id="submitButton">Submit</button>
+    </div>
+
+    <script>
+        var ele = document.getElementById("1");
+        var inputArea = document.getElementById("inputArea");
+        function submitForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var gender = document.getElementById("gender").value;
+
+            createGridItem("Name:", name);
+            createGridItem("Email:", email);
+            createGridItem("Phone Number:", phone);
+            createGridItem("Gender:", gender);
+
+            document.getElementById("name").value = "";
+            document.getElementById("email       ").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("gender").value = "";
+        }
+
+        function createGridItem(label, value) {
+            var gridItem = document.createElement("div");
+            gridItem.classList.add("grid-item");
+            gridItem.textContent = label + " " + value;
+            ele.appendChild(gridItem);
+        }
+        document.getElementById("submitButton").addEventListener("click", submitForm);
+    </script>
+</body>
+</html>

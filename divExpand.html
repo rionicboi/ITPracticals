@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Paragraphs</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .div {
+    height: 40px;
+    font-size: 20px;
+    background-color: #3498db; /* Blue */
+    color: #fff; /* White */
+    transition: all 2s;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px #2c3e50; /* Darker Blue */
+    margin: 15px;
+    text-shadow: 2px 2px 3px #000000; /* Slightly Darker Blue */
+}
+
+.div.active {
+    height: 160px;
+    font-size: 30px;
+    background-color: black; /* Red */
+    color: #e74c3c;
+    box-shadow: 5px 5px 10px #c0392b; /* Darker Red */
+    transition: all 2s;
+    text-shadow: 2px 2px 2px #922b21; /* Slightly Darker Red */
+}
+
+p {
+    box-shadow: -5px -5px 10px #717779; /* Gray */
+    background-color: #181616; /* Dark Gray */
+    height: 90px;
+    text-shadow: 2px 2px 2px #000; /* Black */
+}
+    </style>
+</head>
+<body>
+    <div id="1" class="div">Hello
+        <p class="para">There</p>
+    </div>
+    <div id="2" class="div">General
+        <p class="para">Kenobi</p>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('p').hide();
+
+            $('.div').click(function() {
+                var isParagraphVisible = $(this).find('.para').is(':visible');
+
+                // Hide all paragraphs
+                $('.para').hide(2000);
+
+                // Reset the style for all divs
+                $('.div').removeClass('active');
+
+                if (!isParagraphVisible) {
+                    $(this).find('.para').show(2000);
+                    $(this).addClass('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
